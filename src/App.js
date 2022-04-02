@@ -1,14 +1,24 @@
-import logoSvg from './assets/img/pizza-logo.svg';
+// import logoSvg from './assets/img/pizza-logo.svg';
 import './App.css';
+import Header from './Header';
+import Button from './Button';
+
+
 
 function App() {
   return (
     <div className="wrapper">
-    <div className="header">
+      <Header />
+      {/* <Button text="123" />
+      <Button text="red" /> */}
+      <Button outline>Кнопка</Button>
+      <Button outline>99999</Button>
+    {/* <div className="header">
       <div className="container">
         <div className="header__logo">
           <img width="38" src={logoSvg} alt="Pizza logo" />
           <div>
+            <Button />
             <h1>React Pizza</h1>
             <p>самая вкусная пицца во вселенной</p>
           </div>
@@ -50,7 +60,7 @@ function App() {
           </a>
         </div>
       </div>
-    </div>
+    </div> */}
     <div className="content">
       <div className="container">
         <div className="content__top">
