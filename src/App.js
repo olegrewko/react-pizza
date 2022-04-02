@@ -1,18 +1,27 @@
 // import logoSvg from './assets/img/pizza-logo.svg';
 import './App.css';
-import Header from './Header';
-import Button from './Button';
-
+// import Categories from './components/Categories';
+// import Header from './components/Header';
+// import Button from './components/Button';
+import {Header, Categories} from './components';
 
 
 function App() {
+
+  const cl = () => {
+    alert('Hello')
+  }
   return (
     <div className="wrapper">
       <Header />
       {/* <Button text="123" />
       <Button text="red" /> */}
-      <Button outline>Кнопка</Button>
-      <Button outline>99999</Button>
+      {/* <Button outline>Кнопка</Button>
+      <Button >99999</Button>
+      <Button onClick={cl} test>99999</Button>
+      <button onClick={cl} test>KLICK</button> */}
+
+      {/* <button onClick={()=>{ alert('pink')}} >KLICK200</button> */}
     {/* <div className="header">
       <div className="container">
         <div className="header__logo">
@@ -64,7 +73,15 @@ function App() {
     <div className="content">
       <div className="container">
         <div className="content__top">
-          <div className="categories">
+          <Categories onClick={ (name) => console.log(name)} items = {[
+            'Мясные',
+            'Вегетарианская',
+            'Гриль',
+            'Острые',
+            'Закрытые'
+
+,          ]} />
+          {/* <div className="categories">
             <ul>
               <li className="active">Все</li>
               <li>Мясные</li>
@@ -73,7 +90,7 @@ function App() {
               <li>Острые</li>
               <li>Закрытые</li>
             </ul>
-          </div>
+          </div> */}
           <div className="sort">
             <div className="sort__label">
               <svg
