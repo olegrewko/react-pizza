@@ -5,7 +5,7 @@ import { Header } from './components';
 import Categories from './components/Categories';
 // import {  Categories, SortPopup, Button } from './components';
 import SortPopup from './components/SortPopup';
-import { Home, Cart } from './pages';
+import { Home } from './pages';
 import { Route } from 'react-router-dom'
 
 function App() {
@@ -16,9 +16,9 @@ function App() {
       <Header />
   
     <div className="content">
-        {/* <Home /> */}
-        <Route path='/' component={Home} exact />
-        <Route path='/cart' component={Cart} exact />
+        <Home />
+        {/* <Route path='/' component={Home} exact /> */}
+        {/* <Route path='/cart' component={Cart} exact /> */}
       <div className="container">
         <div className="content__top">
           <Categories
