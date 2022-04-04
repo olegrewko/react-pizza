@@ -3,18 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import './scss/app.scss';
 import App from './App';
-import Header from './components/Header';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from 'react-router-dom'
+// import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Router> */}
+   
     <App />
     {/* <Route exact path="/" component={App} />
     <Route exact path="/qw" component={Header} /> */}
-   
+    {/* <Route path="/cart" component={Cart} exact /> */}
     {/* </Router> */}
+   
   </React.StrictMode>,
   document.getElementById('root')
 );
