@@ -1,4 +1,4 @@
-// import logoSvg from './assets/img/pizza-logo.svg';
+import React from 'react';
 import './App.css';
 // import Categories from './components/Categories';
 import { Header } from './components';
@@ -10,6 +10,12 @@ import { Home, Cart, Error } from './pages';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
+  const [pizzas, setPizzas] = React.useState([])
+  React.useEffect(()=>{
+    fetch('http://localhost:3000/db.json').then((resp)=>resp.json()).then(json=>{
+      setPizzas(json.pizzas);
+    });
+  }, [])
 
 
   return (
@@ -18,6 +24,8 @@ function App() {
       
       <input type="checkbox" className="custom-checkbox" id="happy" name="happy" value="yes" />
       <label for="happy">Happy</label>
+      <input class="custom-radio" name="color" type="radio" id="color-green" value="green" />
+      <label for="color-green">Green</label>
      
 
     <div className="content">
@@ -25,7 +33,8 @@ function App() {
          <Home /> */}
        <Router>  
         <Routes>
-         <Route  path="/" element={<Home/>} /> 
+         <Route path = '/' element={<Home items={pizzas}/>} />
+         {/* <Route  path="/" render={()=><Home items={pizzas}/>} />  */}
          <Route  path = '/cart' element={<Cart/>} />
          <Route path = '*' element={<Error/>} />
         </Routes>
