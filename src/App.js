@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import axios from 'axios';
+import PropTypes from 'prop-types';
 // import Categories from './components/Categories';
 import { Header } from './components';
 import Categories from './components/Categories';
@@ -12,9 +14,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [pizzas, setPizzas] = React.useState([])
   React.useEffect(()=>{
+    // axios.get('http://localhost:3000/db.json')
+    // .then(({data}) => {
+    //   console.log('axios', data)
+    // })
+
     fetch('http://localhost:3000/db.json').then((resp)=>resp.json()).then(json=>{
       setPizzas(json.pizzas);
     });
+
   }, [])
 
 
