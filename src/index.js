@@ -5,7 +5,20 @@ import './scss/app.scss';
 import App from './App';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux';
 // import { BrowserRouter, Switch, Route } from "react-router-dom";
+function counterR(state = { value: 0 }, action) {
+  switch (action.type) {
+    case 'counter/incremented':
+      return { value: state.value + 1 }
+    case 'counter/decremented':
+      return { value: state.value - 1 }
+    default:
+      return state
+  }
+}
+const store = createStore(counterR);
+console.log(store);
 
 ReactDOM.render(
   <React.StrictMode>
