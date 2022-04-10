@@ -31,11 +31,13 @@ function App() {
     <div className="content">
       {/* <Cart />
          <Home /> */}
-       <Router>  
+       <Router>
+      
         <Routes>
          <Route path = '/' element={<Home items={pizzas}/>} />
          {/* <Route  path="/" render={()=><Home items={pizzas}/>} />  */}
          <Route  path = '/cart' element={<Cart/>} />
+         <Route  path = '/header' element={<Header/>} />
          <Route path = '*' element={<Error/>} />
         </Routes>
        </Router>

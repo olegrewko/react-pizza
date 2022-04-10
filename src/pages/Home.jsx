@@ -26,10 +26,12 @@ function Home({items}) {
       
       {
         items.map((obj) => (
-        <PizzaBlock key={obj.id} name={obj.name} imageUrl={obj.imageUrl} price={obj.price}/>
+          <PizzaBlock key={obj.id} {...obj} />
+        // <PizzaBlock key={obj.id} name={obj.name} imageUrl={obj.imageUrl} price={obj.price}/>
   ))
       }
-      <PizzaBlock />
+
+      {/* <PizzaBlock /> */}
       {/* <div className="pizza-block">
 <img
 className="pizza-block__image"
