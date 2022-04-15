@@ -43,7 +43,7 @@ function App() {
       
         <Routes>
          <Route path = '/' element={<Home items={pizzas}/>} />
-         {/* <Route  path="/" render={()=><Home items={pizzas}/>} />  */}
+       
          <Route  path = '/cart' element={<Cart/>} />
          <Route  path = '/header' element={<Header/>} />
          <Route path = '*' element={<Error/>} />

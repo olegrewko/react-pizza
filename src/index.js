@@ -5,31 +5,61 @@ import './scss/app.scss';
 import App from './App';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
-// import { BrowserRouter, Switch, Route } from "react-router-dom";
-function counterR(state = { value: 0 }, action) {
-  switch (action.type) {
-    case 'counter/incremented':
-      return { value: state.value + 1 }
-    case 'counter/decremented':
-      return { value: state.value - 1 }
-    default:
-      return state
-  }
-}
-const store = createStore(counterR);
-console.log(store);
+import { Provider } from 'react-redux'
+import store from './redux/store'
+
+// console.log(store.getState())
+// import { createStore } from 'redux';
+
+// function counterR(state = { value: 0 }, action) {
+//   switch (action.type) {
+//     case 'counter/incremented':
+//       return { value: state.value + 1 }
+//     case 'counter/decremented':
+//       return { value: state.value - 1 }
+//     default:
+//       return state
+//   }
+// }
+// const store = createStore(counterR);
+
+// store.subscribe(() => console.log('хранилище изменилось', store.getState()))
+
+
+// function counterR(state = { value: 0 }, action) {
+//   switch (action.type) {
+//     case 'counter/incremented':
+//       return { value: state.value + 1 }
+//     case 'counter/decremented':
+//       return { value: state.value - 1 }
+//     default:
+//       return state
+//   }
+// }
+// const store = createStore(counterR);
+
+// store.dispatch({ type: 'counter/incremented'})
+// store.dispatch({ type: 'counter/decremented'})
+// const inc = () => {
+//   store.dispatch({
+//     type: 'counter/incremented'
+//   })
+// }
+// store.subscribe(() => {
+//   console.log('изменение', store.getState())
+// })
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Router> */}
-   
+     <Router>
+               
+   </Router>
+
+   <Provider store={store}>
     <App />
-    {/* <Route exact path="/" component={App} />
-    <Route exact path="/qw" component={Header} /> */}
-    {/* <Route path="/cart" component={Cart} exact /> */}
-    {/* </Router> */}
-   
+    </Provider>
+    
+   {/* <App /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
